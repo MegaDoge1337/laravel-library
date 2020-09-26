@@ -1,0 +1,29 @@
+<?php
+
+namespace App\Http\Controllers\Api;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
+class DiscountController extends Controller
+{
+    public function create()
+    {
+
+    }
+
+    public function update()
+    {
+
+    }
+
+    public function show()
+    {
+
+    }
+
+    public function delete()
+    {
+
+    }
+}
