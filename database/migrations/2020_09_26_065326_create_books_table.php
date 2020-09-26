@@ -15,6 +15,11 @@ class CreateBooksTable extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
+            $table->string('author');
+            $table->string('title');
+            $table->year('year_of_publication');
+            $table->string('place_of_publication');
+            $table->float('price');
             $table->timestamps();
         });
     }
