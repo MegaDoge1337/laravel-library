@@ -20,6 +20,7 @@ class CreateBooksTable extends Migration
             $table->year('year_of_publication');
             $table->string('place_of_publication');
             $table->float('price');
+            $table->boolean('existence');
             $table->timestamps();
         });
     }

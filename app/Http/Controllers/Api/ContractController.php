@@ -47,6 +47,10 @@ class ContractController extends Controller
 
     public function create(Request $request)
     {
+        $request->validate([
+            'book_id' => ['required']
+        ]);
+
         try {
             $bookId = $this->bookService->rentBook($request['book_id']);
         } catch (Exception $exception) {
@@ -83,6 +87,7 @@ class ContractController extends Controller
 
         if($deleted)
         {
+            $this->bookService->returnBook($contract->book_id);
             return response()->json($contract);
         }
 

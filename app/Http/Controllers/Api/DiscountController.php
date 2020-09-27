@@ -10,13 +10,27 @@ use Illuminate\Http\Request;
 
 class DiscountController extends Controller
 {
-    public function list()
+    public function list(Request $request)
     {
+        if(!$request->user()->isAdmin)
+        {
+            return response()->json([
+                'error' => '403: Forbidden'
+            ]);
+        }
+
         return response()->json(Discount::all());
     }
 
-    public function single(int $id)
+    public function single(int $id, Request $request)
     {
+        if(!$request->user()->isAdmin)
+        {
+            return response()->json([
+                'error' => '403: Forbidden'
+            ]);
+        }
+
         try {
             $discount = Discount::findOrFail($id);
         } catch (ModelNotFoundException $exception) {
@@ -30,6 +44,18 @@ class DiscountController extends Controller
 
     public function create(Request $request)
     {
+        if(!$request->user()->isAdmin)
+        {
+            return response()->json([
+                'error' => '403: Forbidden'
+            ]);
+        }
+
+        $request->validate([
+            'user_id' => ['required'],
+            'discount' => ['required']
+        ]);
+
         $attributes = [
             'user_id' => $request->user_id,
             'discount' => $request->discount
@@ -38,13 +64,39 @@ class DiscountController extends Controller
         return response()->json(Discount::create($attributes));
     }
 
-    public function update()
+    public function update(int $id, Request $request)
     {
+        if(!$request->user()->isAdmin)
+        {
+            return response()->json([
+                'error' => '403: Forbidden'
+            ]);
+        }
 
+        $request->validate([
+            'user_id' => ['required'],
+            'discount' => ['required']
+        ]);
+
+        $attributes = [
+            'user_id' => $request->user_id,
+            'discount' => $request->discount
+        ];
+
+        Discount::find($id)->update($attributes);
+
+        return response()->json(Discount::find($id));
     }
 
-    public function delete(int $id)
+    public function delete(int $id, Request $request)
     {
+        if(!$request->user()->isAdmin)
+        {
+            return response()->json([
+                'error' => '403: Forbidden'
+            ]);
+        }
+
         try {
             $discount = Discount::findOrFail($id);
         } catch (ModelNotFoundException $exception) {

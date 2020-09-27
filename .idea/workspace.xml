@@ -11,23 +11,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="458f2000-d2d1-435d-9f7d-fa4cefdfb213" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Services/BookService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/laravel-library-final.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel-library-final.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.phpstorm.meta.php" beforeDir="false" afterPath="$PROJECT_DIR$/.phpstorm.meta.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/BookController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/DiscountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/DiscountController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Contract.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Contract.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Discount.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Discount.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/BookService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/BookService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/BookFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/BookFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_26_065326_create_books_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_26_065326_create_books_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_26_065343_create_discounts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_26_065343_create_discounts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_26_065357_create_contracts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_26_065357_create_contracts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -155,6 +156,19 @@
       <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
       <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/vendor/nyholm/psr7" />
+      <path value="$PROJECT_DIR$/vendor/php-http/message-factory" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/vendor/league/event" />
+      <path value="$PROJECT_DIR$/vendor/league/oauth2-server" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-diactoros" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-zendframework-bridge" />
+      <path value="$PROJECT_DIR$/vendor/defuse/php-encryption" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/vendor/laravel/passport" />
+      <path value="$PROJECT_DIR$/vendor/symfony/psr-http-message-bridge" />
+      <path value="$PROJECT_DIR$/vendor/firebase/php-jwt" />
     </include_path>
   </component>
   <component name="ProjectId" id="1i2KMBMSuEfnAHJHwenjnQfWrAy" />
@@ -196,7 +210,8 @@
       <workItem from="1601100197144" duration="3990000" />
       <workItem from="1601114972037" duration="50000" />
       <workItem from="1601115046817" duration="1884000" />
-      <workItem from="1601141485539" duration="2470000" />
+      <workItem from="1601141485539" duration="2651000" />
+      <workItem from="1601192820570" duration="6747000" />
     </task>
     <servers />
   </component>
@@ -213,12 +228,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="659" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601143792693">
+    <state x="659" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601200606148">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="659" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1601143792693" />
+    <state x="659" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1601200606148" />
     <state x="709" y="295" key="FileChooserDialogImpl" timestamp="1601115022606">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -227,5 +243,9 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="763" y="463" key="NewPhpFileDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1601141845706" />
+    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1601196519481">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1601196519481" />
   </component>
 </project>

@@ -12,6 +12,7 @@ $factory->define(Book::class, function (Faker $faker) {
         'title' => $faker->streetName,
         'year_of_publication' => $faker->year,
         'place_of_publication' => $faker->city,
-        'price' => $faker->randomFloat(2, 100, 500)
+        'price' => $faker->randomFloat(2, 100, 500),
+        'existence' => $faker->boolean
     ];
 });
