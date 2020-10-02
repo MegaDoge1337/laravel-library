@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
@@ -34,12 +35,19 @@ class LoginController extends Controller
 
         $token = $user->createToken('Auth Token')->accessToken;
 
-        return response()->json(['message' => 'Successfully login']);
+        return response()
+            ->json(['message' => 'Successfully login'])
+            ->cookie('token', $token, 60);
     }
 
     public function logout(Request $request)
     {
         $request->user()->token()->delete();
+
+        if(Cookie::get('token'))
+        {
+            Cookie::forget('token');
+        }
 
         return response()->json([
             'message' => 'Successfully logout'

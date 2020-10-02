@@ -21,7 +21,7 @@ class ContractController extends Controller
     public function list(Request $request)
     {
         $userId = $request->user()->id;
-        return response()->json(Contract::where('user_id', $userId));
+        return response()->json(Contract::where('user_id', $userId)->get()->all());
     }
 
     public function single(int $id, Request $request)
@@ -85,8 +85,7 @@ class ContractController extends Controller
             ]);
         }
 
-        if($deleted)
-        {
+        if ($deleted) {
             $this->bookService->returnBook($contract->book_id);
             return response()->json($contract);
         }

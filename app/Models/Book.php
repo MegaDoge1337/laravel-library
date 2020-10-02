@@ -36,6 +36,7 @@ class Book extends Model
         'title',
         'year_of_publication',
         'place_of_publication',
-        'price'
+        'price',
+        'existence'
     ];
 }

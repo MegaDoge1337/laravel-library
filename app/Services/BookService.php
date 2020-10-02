@@ -11,17 +11,16 @@ class BookService
     {
         $book = Book::find($bookId);
 
-        if(!$book)
-        {
+        if (!$book) {
             throw new Exception('Book not found', 404);
         }
 
-        if(!$book->existence)
-        {
+        if (!$book->existence) {
             throw new Exception('Book already rent or lost', 400);
         }
 
-        $book->put('existence', 0)->save();
+        $book->existence = 0;
+        $book->save();
 
         return $bookId;
     }
@@ -30,9 +29,9 @@ class BookService
     {
         $book = Book::find($bookId);
 
-        if($book)
-        {
-            $book->put('existence', 1)->save();
+        if ($book) {
+            $book->existence = 1;
+            $book->save();
         }
 
         return $bookId;

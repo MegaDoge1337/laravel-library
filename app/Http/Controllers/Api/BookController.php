@@ -11,7 +11,7 @@ class BookController extends Controller
 {
     public function list()
     {
-        return response()->json(Book::all());
+        return response()->json(Book::orderByDesc('id')->get()->all());
     }
 
     public function single(int $id)
@@ -48,7 +48,8 @@ class BookController extends Controller
             'title' => $request['title'],
             'year_of_publication' => $request['year_of_publication'],
             'place_of_publication' => $request['place_of_publication'],
-            'price' => $request['price']
+            'price' => $request['price'],
+            'existence' => 1
         ];
 
         $book = Book::create($attributes);
