@@ -18,13 +18,13 @@ class ContractController extends Controller
         $this->bookService = $bookService;
     }
 
-    public function list(Request $request)
+    public function getAllContracts(Request $request)
     {
         $userId = $request->user()->id;
         return response()->json(Contract::where('user_id', $userId)->get()->all());
     }
 
-    public function single(int $id, Request $request)
+    public function getContract(int $id, Request $request)
     {
         try {
             $contract = Contract::findOrFail($id);
@@ -45,7 +45,7 @@ class ContractController extends Controller
         return response()->json($contract);
     }
 
-    public function create(Request $request)
+    public function createContract(Request $request)
     {
         $request->validate([
             'book_id' => ['required']
@@ -67,7 +67,7 @@ class ContractController extends Controller
         return response()->json(Contract::create($attributes));
     }
 
-    public function delete(int $id)
+    public function deleteContract(int $id)
     {
         try {
             $contract = Contract::findOrFail($id);

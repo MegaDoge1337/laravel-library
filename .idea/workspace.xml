@@ -11,21 +11,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="458f2000-d2d1-435d-9f7d-fa4cefdfb213" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/books/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/books/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/books/list.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/books/single.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/contracts/list.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/View/DiscountController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Services/DiscountService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/discounts/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/discounts/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/discounts/list.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/discounts/single.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/laravel-library-final.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel-library-final.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.phpstorm.meta.php" beforeDir="false" afterPath="$PROJECT_DIR$/.phpstorm.meta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_ide_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/BookController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/DiscountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/DiscountController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ContractController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ContractController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/BookService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/BookService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/View/BookController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ContractController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/View/ContractController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DiscountController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/View/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/books/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/books/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/books/single.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/books/single.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -166,6 +184,8 @@
       <path value="$PROJECT_DIR$/vendor/laravel/passport" />
       <path value="$PROJECT_DIR$/vendor/symfony/psr-http-message-bridge" />
       <path value="$PROJECT_DIR$/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/vendor/laravel/socialite" />
+      <path value="$PROJECT_DIR$/vendor/league/oauth1-client" />
     </include_path>
   </component>
   <component name="ProjectId" id="1i2KMBMSuEfnAHJHwenjnQfWrAy" />
@@ -176,20 +196,22 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/BookControllers" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\OpenServer\domains\laravel-library-final\app\Services" />
+      <recent name="E:\OpenServer\domains\laravel-library-final\resources\views" />
+      <recent name="E:\OpenServer\domains\laravel-library-final\resources\views\books" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\OpenServer\domains\laravel-library-final\app\Http\Controllers\View" />
+      <recent name="E:\OpenServer\domains\laravel-library-final\app\Http\Controllers\BookControllers" />
       <recent name="E:\OpenServer\domains\laravel-library-final\database\seeds" />
       <recent name="E:\OpenServer\domains\laravel-library-final\database\seeds\seeders" />
       <recent name="E:\OpenServer\domains\laravel-library-final\app\Models" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\OpenServer\domains\laravel-library-final\resources\views" />
-      <recent name="E:\OpenServer\domains\laravel-library-final\resources\views\books" />
-      <recent name="E:\OpenServer\domains\laravel-library-final\app\Services" />
     </key>
   </component>
   <component name="RunManager">
@@ -217,7 +239,14 @@
       <workItem from="1601531936250" duration="2454000" />
       <workItem from="1601560519145" duration="875000" />
       <workItem from="1601620622227" duration="433000" />
-      <workItem from="1601621486732" duration="5898000" />
+      <workItem from="1601621486732" duration="11432000" />
+      <workItem from="1601708648056" duration="1534000" />
+      <workItem from="1601710285756" duration="22000" />
+      <workItem from="1601710317929" duration="1718000" />
+      <workItem from="1601713517216" duration="849000" />
+      <workItem from="1601821129303" duration="5117000" />
+      <workItem from="1601881680660" duration="5450000" />
+      <workItem from="1601980009878" duration="1968000" />
     </task>
     <servers />
   </component>
@@ -241,18 +270,18 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="659" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1601274759808" />
-    <state x="659" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601624405860">
+    <state x="659" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601634109616">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="659" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1601624405860" />
-    <state x="709" y="295" key="FileChooserDialogImpl" timestamp="1601115022606">
+    <state x="659" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1601634109616" />
+    <state x="709" y="295" key="FileChooserDialogImpl" timestamp="1601891151426">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="709" y="295" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1601115022606" />
-    <state x="763" y="463" key="NewPhpFileDialog" timestamp="1601532106976">
+    <state x="709" y="295" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1601891151426" />
+    <state x="763" y="463" key="NewPhpFileDialog" timestamp="1601981559220">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="763" y="463" key="NewPhpFileDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1601532106976" />
+    <state x="763" y="463" key="NewPhpFileDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1601981559220" />
     <state x="592" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1601196519481">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>

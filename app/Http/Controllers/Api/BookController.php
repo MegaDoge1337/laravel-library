@@ -9,12 +9,12 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
-    public function list()
+    public function getAllBooks()
     {
         return response()->json(Book::orderByDesc('id')->get()->all());
     }
 
-    public function single(int $id)
+    public function getSingle(int $id)
     {
         try {
             $book = Book::findOrFail($id);
@@ -27,7 +27,7 @@ class BookController extends Controller
         return response()->json($book);
     }
 
-    public function create(Request $request)
+    public function createBook(Request $request)
     {
         if (!$request->user()->isAdmin) {
             return response()->json([
@@ -57,7 +57,7 @@ class BookController extends Controller
         return response()->json($book);
     }
 
-    public function update(int $id, Request $request)
+    public function updateBook(int $id, Request $request)
     {
         if (!$request->user()->isAdmin) {
             return response()->json([
@@ -86,7 +86,7 @@ class BookController extends Controller
         return response()->json(Book::find($id));
     }
 
-    public function delete(int $id, Request $request)
+    public function deleteBook(int $id, Request $request)
     {
         if (!$request->user()->isAdmin) {
             return response()->json([

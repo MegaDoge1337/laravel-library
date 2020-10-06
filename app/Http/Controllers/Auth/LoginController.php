@@ -4,9 +4,13 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\Services\DiscountService;
+use App\User;
+use Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
+use Laravel\Socialite\Facades\Socialite;
 
 class LoginController extends Controller
 {
@@ -30,19 +34,48 @@ class LoginController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    protected DiscountService $discountService;
+
+    public function __construct(DiscountService $discountService)
     {
         $this->middleware('guest')->except('logout');
+        $this->discountService = $discountService;
+    }
+
+    public function redirectToProvider($provider)
+    {
+        return Socialite::driver($provider)->redirect();
+    }
+
+    public function handleProviderCallback($provider)
+    {
+        $providerUser = Socialite::driver($provider)->stateless()->user();
+        $user = User::where('email', $providerUser->email)->first();
+
+        if(!$user)
+        {
+            return view('auth.register', [
+                'providerName' => $providerUser->name,
+                'providerEmail' => $providerUser->email,
+                'fromGPlus' => 'disabled'
+            ]);
+        }
+
+        Auth::login($user);
+
+        $token = $user->createToken('Auth Token')->accessToken;
+
+        $this->discountService->giveDiscountForCreateDate($user);
+
+        return redirect('/home')->cookie('token', $token, 60);
+
     }
 
     public function authenticated(Request $request, $user)
     {
         $token = $user->createToken('Auth Token')->accessToken;
+
+        $this->discountService->giveDiscountForCreateDate($user);
 
         return redirect('/home')->cookie('token', $token, 60);
     }

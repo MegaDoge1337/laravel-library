@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Services\DiscountService;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
@@ -10,6 +11,13 @@ use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
+    protected DiscountService $discountService;
+
+    public function __construct(DiscountService $discountService)
+    {
+        $this->discountService = $discountService;
+    }
+
     public function login(Request $request)
     {
         $request->validate([
@@ -34,6 +42,8 @@ class LoginController extends Controller
         }
 
         $token = $user->createToken('Auth Token')->accessToken;
+
+        $this->discountService->giveDiscountForCreateDate($user);
 
         return response()
             ->json(['message' => 'Successfully login'])

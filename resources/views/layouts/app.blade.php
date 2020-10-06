@@ -36,7 +36,6 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
                     <a class="nav-link" href="{{ route('books.all') }}">Books</a>
-                    <a class="nav-link" href="{{ route('contracts.all') }}">My Contracts</a>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -59,10 +58,13 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('contracts.all') }}">My Contracts</a>
+                                <a class="dropdown-item">My Wallet</a>
+                                <div class="dropdown-divider"></div>
                                 @if(Auth::user()->isAdmin)
-                                    <a class="dropdown-item" href="{{ route('books.create') }}">Add book</a>
+                                    <a class="dropdown-item" href="{{ route('discounts.all') }}">Discounts</a>
+                                    <div class="dropdown-divider"></div>
                                 @endif
-
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

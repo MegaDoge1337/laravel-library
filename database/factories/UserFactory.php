@@ -3,6 +3,7 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use App\User;
+use Carbon\Carbon;
 use Faker\Generator as Faker;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -25,6 +26,9 @@ $factory->define(User::class, function (Faker $faker) {
         'email_verified_at' => now(),
         'password' => Hash::make(12345678),
         'isAdmin' => $faker->boolean,
-        'remember_token' => Str::random(10)
+        'remember_token' => Str::random(10),
+        'bill' => 2000,
+        'created_at' => Carbon::createFromDate(2019, 07, 22),
+        'updated_at' => Carbon::now()
     ];
 });

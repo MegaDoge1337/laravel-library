@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\Discount;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
@@ -42,10 +43,17 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'isAdmin'
+        'isAdmin',
+        'created_at',
+        'updated_at'
     ];
 
     protected $hidden = [
         'password'
     ];
+
+    public function discounts()
+    {
+        return $this->hasMany(Discount::class, 'user_id');
+    }
 }

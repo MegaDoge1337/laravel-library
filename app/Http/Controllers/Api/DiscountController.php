@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 class DiscountController extends Controller
 {
-    public function list(Request $request)
+    public function getAllDiscounts(Request $request)
     {
         if(!$request->user()->isAdmin)
         {
@@ -22,7 +22,7 @@ class DiscountController extends Controller
         return response()->json(Discount::all());
     }
 
-    public function single(int $id, Request $request)
+    public function getDiscount(int $id, Request $request)
     {
         if(!$request->user()->isAdmin)
         {
@@ -42,7 +42,7 @@ class DiscountController extends Controller
         return response()->json($discount);
     }
 
-    public function create(Request $request)
+    public function createDiscount(Request $request)
     {
         if(!$request->user()->isAdmin)
         {
@@ -64,7 +64,7 @@ class DiscountController extends Controller
         return response()->json(Discount::create($attributes));
     }
 
-    public function update(int $id, Request $request)
+    public function updateDiscount(int $id, Request $request)
     {
         if(!$request->user()->isAdmin)
         {
@@ -88,7 +88,7 @@ class DiscountController extends Controller
         return response()->json(Discount::find($id));
     }
 
-    public function delete(int $id, Request $request)
+    public function deleteDiscount(int $id, Request $request)
     {
         if(!$request->user()->isAdmin)
         {

@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-12">
+            <div class="col-md-14">
                 @if($error)
                     <div class="alert alert-danger" role="alert">
                         {{ $error }}
@@ -12,6 +12,11 @@
                 <div class="card">
                     <div class="card-header">Books List</div>
                     <div class="card-body">
+                        @if($user->isAdmin)
+                            <a class="btn btn-success" href="{{ route('books.create') }}"
+                               role="button">Add New Book</a><br><br>
+                        @endif
+
                         <table class="table">
                             <thead>
                             <tr>
@@ -41,6 +46,8 @@
                                     <td>{{ $book['year_of_publication'] }}</td>
                                     <td>{{ $book['place_of_publication'] }}</td>
                                     <td>{{ $book['price'] }}</td>
+
+                                    @if($book['existence'])
                                     <td>
                                         <form action="{{ route('contracts.store') }}" method="POST">
                                             @csrf
@@ -48,6 +55,14 @@
                                             <button class="btn btn-primary">Contract</button>
                                         </form>
                                     </td>
+                                    @endif
+
+                                    @if(!$book['existence'])
+                                        <td>
+                                            <a class="btn btn-dark disabled" role="button" >Contract</a>
+                                        </td>
+                                    @endif
+
                                     @if($user->isAdmin)
                                         <td>
                                             <form action="{{ route('books.delete', $book['id']) }}" method="POST">

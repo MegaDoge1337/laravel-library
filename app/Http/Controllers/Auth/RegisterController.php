@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\Services\DiscountService;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -31,14 +33,17 @@ class RegisterController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
+    protected DiscountService $discountService;
+
     /**
      * Create a new controller instance.
      *
-     * @return void
+     * @param DiscountService $discountService
      */
-    public function __construct()
+    public function __construct(DiscountService $discountService)
     {
         $this->middleware('guest');
+        $this->discountService = $discountService;
     }
 
     /**
@@ -69,5 +74,14 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    public function registered(Request $request, $user)
+    {
+        $token = $user->createToken('Auth Token')->accessToken;
+
+        $this->discountService->giveDiscountForCreateDate($user);
+
+        return redirect('/home')->cookie('token', $token, 60);
     }
 }

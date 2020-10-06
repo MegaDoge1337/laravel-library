@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\View;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Http;
@@ -17,6 +18,8 @@ class BookController extends Controller
             'Accept' => 'application/json',
             'Authorization' => 'Bearer ' . Cookie::get('token'),
         ])->get('http://localhost:8001/api/books');
+
+        //TODO if($response->ok()) {return books} else {return error}
 
         return view('books.list', [
             'books' => $response->json(),
@@ -120,10 +123,12 @@ class BookController extends Controller
             'price' => $request['price']
         ];
 
-        return Http::withHeaders([
+        $response = Http::withHeaders([
             'Content-Type' => 'application/json',
             'Accept' => 'application/json',
             'Authorization' => 'Bearer ' . Cookie::get('token'),
         ])->put('http://localhost:8001/api/books/' . $id, $data);
+
+        return redirect('/books')->with($response->json());
     }
 }
