@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\Services\DiscountService;
+use App\Services\PaymentCalculator;
 use App\User;
 use Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -34,9 +34,9 @@ class LoginController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
-    protected DiscountService $discountService;
+    protected PaymentCalculator $discountService;
 
-    public function __construct(DiscountService $discountService)
+    public function __construct(PaymentCalculator $discountService)
     {
         $this->middleware('guest')->except('logout');
         $this->discountService = $discountService;

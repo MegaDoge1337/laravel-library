@@ -27,6 +27,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Book whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Book whereYearOfPublication($value)
  * @mixin \Eloquent
+ * @property int $existence
+ * @method static \Illuminate\Database\Eloquent\Builder|Book whereExistence($value)
  */
 class Book extends Model
 {

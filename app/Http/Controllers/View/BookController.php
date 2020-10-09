@@ -19,7 +19,7 @@ class BookController extends Controller
             'Authorization' => 'Bearer ' . Cookie::get('token'),
         ])->get('http://localhost:8001/api/books');
 
-        //TODO if($response->ok()) {return books} else {return error}
+        // TODO if($response->ok()) {return books} else {return error}
 
         return view('books.list', [
             'books' => $response->json(),
