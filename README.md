@@ -1,6 +1,6 @@
 # LIBRARY SYSTEM
-Powered by Laravel
-Version: 1.0.0
+<p>Powered by Laravel</p>
+<p>Version: 1.0.0</p>
 # API Description
 Bla-bla-bla
 # View Routes Description
