@@ -4,15 +4,24 @@ namespace App\Http\Controllers\View;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Http;
 
 class DiscountController extends Controller
 {
-    public function list(Request $request)
+    public function getAllDiscounts(Request $request)
     {
-        $error = $request->session()->get('error');
+        if(!Cookie::get('token'))
+        {
+            Auth::logout();
+            return redirect('/login');
+        }
+
+        if (!$request->user()->isAdmin) {
+            return redirect('/error')->with('error', '403: Forbidden');
+        }
 
         $response = Http::withHeaders([
             'Content-Type' => 'application/json',
@@ -23,19 +32,38 @@ class DiscountController extends Controller
         return view('discounts.list', [
             'discounts' => $response->json(),
             'user' => $request->user(),
-            'error' => $error ?? false
         ]);
     }
 
-    public function create()
+    public function createDiscount(Request $request)
     {
+        if(!Cookie::get('token'))
+        {
+            Auth::logout();
+            return redirect('/login');
+        }
+
+        if (!$request->user()->isAdmin) {
+            return redirect('/error')->with('error', '403: Forbidden');
+        }
+
         return view('discounts.create', [
             'users' => User::all()
         ]);
     }
 
-    public function store(Request $request)
+    public function storeDiscount(Request $request)
     {
+        if(!Cookie::get('token'))
+        {
+            Auth::logout();
+            return redirect('/login');
+        }
+
+        if (!$request->user()->isAdmin) {
+            return redirect('/error')->with('error', '403: Forbidden');
+        }
+
         $request->validate([
             'user_id' => ['required'],
             'discount' => ['required']
@@ -52,27 +80,54 @@ class DiscountController extends Controller
             'Authorization' => 'Bearer ' . Cookie::get('token'),
         ])->post('http://localhost:8001/api/discounts', $data);
 
-        return redirect('/discounts')->with($response->json());
+        $response = $response->json();
+
+        if($response['error'] ?? null)
+        {
+            return redirect('/error')->with('error', $response['error']);
+        }
+
+        return redirect('/discounts')->with($response);
     }
 
-    public function delete(int $id)
+    public function deleteDiscount(int $id, Request $request)
     {
+        if(!Cookie::get('token'))
+        {
+            Auth::logout();
+            return redirect('/login');
+        }
+
+        if (!$request->user()->isAdmin) {
+            return redirect('/error')->with('error', '403: Forbidden');
+        }
+
         $response = Http::withHeaders([
             'Content-Type' => 'application/json',
             'Accept' => 'application/json',
             'Authorization' => 'Bearer ' . Cookie::get('token'),
         ])->delete('http://localhost:8001/api/discounts/' . $id);
 
-        return redirect('/discounts')->with($response->json());
+        $response = $response->json();
+
+        if($response['error'] ?? null)
+        {
+            return redirect('/error')->with('error', $response['error']);
+        }
+
+        return redirect('/discounts')->with($response);
     }
 
-    public function edit(int $id, Request $request)
+    public function editDiscount(int $id, Request $request)
     {
+        if(!Cookie::get('token'))
+        {
+            Auth::logout();
+            return redirect('/login');
+        }
+
         if (!$request->user()->isAdmin) {
-            return view('error.error', [
-                'code' => 403,
-                'message' => 'Forbidden'
-            ]);
+            return redirect('/error')->with('error', '403: Forbidden');
         }
 
         $response = Http::withHeaders([
@@ -81,14 +136,31 @@ class DiscountController extends Controller
             'Authorization' => 'Bearer ' . Cookie::get('token'),
         ])->get('http://localhost:8001/api/discounts/' . $id);
 
+        $response = $response->json();
+
+        if($response['error'] ?? null)
+        {
+            return redirect('/error')->with('error', $response['error']);
+        }
+
         return view('discounts.edit', [
-            'discount' => $response->json(),
+            'discount' => $response,
             'users' => User::all()
         ]);
     }
 
-    public function update(int $id, Request $request)
+    public function updateDiscount(int $id, Request $request)
     {
+        if(!Cookie::get('token'))
+        {
+            Auth::logout();
+            return redirect('/login');
+        }
+
+        if (!$request->user()->isAdmin) {
+            return redirect('/error')->with('error', '403: Forbidden');
+        }
+
         $request->validate([
             'user_id' => ['required'],
             'discount' => ['required']
@@ -105,6 +177,13 @@ class DiscountController extends Controller
             'Authorization' => 'Bearer ' . Cookie::get('token'),
         ])->put('http://localhost:8001/api/discounts/' . $id, $data);
 
-        return redirect('/discounts')->with($response->json());
+        $response = $response->json();
+
+        if($response['error'] ?? null)
+        {
+            return redirect('/error')->with('error', $response['error']);
+        }
+
+        return redirect('/discounts')->with($response);
     }
 }

@@ -4,11 +4,6 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                @if($error)
-                    <div class="alert alert-danger" role="alert">
-                        {{ $error }}
-                    </div>
-                @endif
                 <div class="card">
                     <div class="card-header">Contracts List</div>
                     <div class="card-body">

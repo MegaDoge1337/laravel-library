@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\GiftDiscount;
 use App\User;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,8 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        factory(User::class, 10)->create();
+        factory(User::class, 10)->create()->each(function ($user){
+            GiftDiscount::create(['user_id' => $user->id]);
+        });
     }
 }

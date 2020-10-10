@@ -14,7 +14,7 @@ class BookController extends Controller
         return response()->json(Book::orderByDesc('id')->get()->all());
     }
 
-    public function getSingle(int $id)
+    public function getBook(int $id)
     {
         try {
             $book = Book::findOrFail($id);

@@ -39,10 +39,10 @@ class WalletController extends Controller
 
         $bill = $request->user()->bill;
         $price = $request->price;
-        $discount = $request->user()->discount()->first() ?? 0; // If discount not exist: discount = 0
+        $discount = $request->user()->discounts()->first() ?? 0; // If discount not exist: discount = 0
 
         try {
-            $bill = $this->paymentCalculator->calculatePayment($bill, $price, $discount->discount); // Calculate paymanet and return the remainder of bill
+            $bill = $this->paymentCalculator->calculatePayment($bill, $price, $discount->discount); // Calculate payment and return the remainder of bill
         } catch (Exception $exception) {
             return response()->json([
                 'error' => "{$exception->getCode()}: {$exception->getMessage()}"

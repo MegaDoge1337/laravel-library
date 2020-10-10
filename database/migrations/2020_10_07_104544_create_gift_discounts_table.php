@@ -16,6 +16,7 @@ class CreateGiftDiscountsTable extends Migration
         Schema::create('gift_discounts', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id')->index();
+            $table->timestamps();
         });
     }
 

@@ -50,6 +50,7 @@ class User extends Authenticatable
         'email',
         'password',
         'isAdmin',
+        'bill',
         'created_at',
         'updated_at'
     ];

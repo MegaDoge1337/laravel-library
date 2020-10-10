@@ -11,15 +11,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="458f2000-d2d1-435d-9f7d-fa4cefdfb213" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Services/PaymentCalculator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/wallet/wallet.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/BookController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/RegisterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/WalletController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/WalletController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/View/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/View/BookController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/DiscountService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/DiscountService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/View/ContractController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/View/ContractController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/View/DiscountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/View/DiscountController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/View/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/View/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/View/WalletController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/View/WalletController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_07_104544_create_gift_discounts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_07_104544_create_gift_discounts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/UserSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UserSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/books/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/books/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/contracts/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/contracts/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/discounts/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/discounts/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,23 +187,24 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Services" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/wallet" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\OpenServer\domains\laravel-library-final\resources\views\wallet" />
+      <recent name="E:\OpenServer\domains\laravel-library-final\app\Services" />
+      <recent name="E:\OpenServer\domains\laravel-library-final\resources\views\error" />
+      <recent name="E:\OpenServer\domains\laravel-library-final\resources\views" />
+      <recent name="E:\OpenServer\domains\laravel-library-final\resources\views\books" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\OpenServer\domains\laravel-library-final\app\Http\Controllers\View" />
       <recent name="E:\OpenServer\domains\laravel-library-final\app\Http\Controllers\BookControllers" />
       <recent name="E:\OpenServer\domains\laravel-library-final\database\seeds" />
       <recent name="E:\OpenServer\domains\laravel-library-final\database\seeds\seeders" />
       <recent name="E:\OpenServer\domains\laravel-library-final\app\Models" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\OpenServer\domains\laravel-library-final\app\Services" />
-      <recent name="E:\OpenServer\domains\laravel-library-final\resources\views\error" />
-      <recent name="E:\OpenServer\domains\laravel-library-final\resources\views" />
-      <recent name="E:\OpenServer\domains\laravel-library-final\resources\views\books" />
     </key>
   </component>
   <component name="RunManager">
@@ -224,6 +241,8 @@
       <workItem from="1601881680660" duration="5450000" />
       <workItem from="1601980009878" duration="2434000" />
       <workItem from="1602065792772" duration="3182000" />
+      <workItem from="1602226530207" duration="7161000" />
+      <workItem from="1602309916063" duration="6510000" />
     </task>
     <servers />
   </component>
@@ -247,10 +266,10 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="659" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1601274759808" />
-    <state x="659" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601634109616">
+    <state x="659" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602230734091">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="659" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1601634109616" />
+    <state x="659" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1602230734091" />
     <state x="709" y="295" key="FileChooserDialogImpl" timestamp="1601891151426">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>

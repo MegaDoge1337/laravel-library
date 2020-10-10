@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\Services\PaymentCalculator;
+use App\Services\DiscountService;
 use App\User;
 use Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -34,12 +34,9 @@ class LoginController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
-    protected PaymentCalculator $discountService;
-
-    public function __construct(PaymentCalculator $discountService)
+    public function __construct()
     {
         $this->middleware('guest')->except('logout');
-        $this->discountService = $discountService;
     }
 
     public function redirectToProvider($provider)
@@ -65,8 +62,6 @@ class LoginController extends Controller
 
         $token = $user->createToken('Auth Token')->accessToken;
 
-        $this->discountService->giveDiscountForCreateDate($user);
-
         return redirect('/home')->cookie('token', $token, 60);
 
     }
@@ -74,8 +69,6 @@ class LoginController extends Controller
     public function authenticated(Request $request, $user)
     {
         $token = $user->createToken('Auth Token')->accessToken;
-
-        $this->discountService->giveDiscountForCreateDate($user);
 
         return redirect('/home')->cookie('token', $token, 60);
     }

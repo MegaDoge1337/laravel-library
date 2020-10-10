@@ -4,11 +4,6 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-14">
-                @if($error)
-                    <div class="alert alert-danger" role="alert">
-                        {{ $error }}
-                    </div>
-                @endif
                 <div class="card">
                     <div class="card-header">Books List</div>
                     <div class="card-body">
@@ -52,6 +47,7 @@
                                         <form action="{{ route('contracts.store') }}" method="POST">
                                             @csrf
                                             <input type="hidden" name="book_id" value="{{ $book['id'] }}">
+                                            <input type="hidden" name="book_price" value="{{ $book['price'] }}">
                                             <button class="btn btn-primary">Contract</button>
                                         </form>
                                     </td>

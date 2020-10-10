@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\View;
 
 use App\Http\Controllers\Controller;
+use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 
 class HomeController extends Controller
 {
@@ -12,8 +14,14 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(Request $request)
     {
+        if(!Cookie::get('token'))
+        {
+            Auth::logout();
+            return redirect('/login');
+        }
+
         return view('home');
     }
 }

@@ -18,31 +18,10 @@ class ContractController extends Controller
         $this->bookService = $bookService;
     }
 
-    public function getAllContracts(Request $request)
+    public function getUserContracts(Request $request)
     {
         $userId = $request->user()->id;
         return response()->json(Contract::where('user_id', $userId)->get()->all());
-    }
-
-    public function getContract(int $id, Request $request)
-    {
-        try {
-            $contract = Contract::findOrFail($id);
-        } catch (ModelNotFoundException $exception) {
-            return response()->json([
-                'error' => "{$exception->getCode()}: {$exception->getMessage()}"
-            ]);
-        }
-
-        $userId = $request->user()->id;
-
-        if ($contract->user_id != $userId) {
-            return response()->json([
-                'error' => "403: Forbidden"
-            ]);
-        }
-
-        return response()->json($contract);
     }
 
     public function createContract(Request $request)

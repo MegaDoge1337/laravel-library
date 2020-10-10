@@ -59,7 +59,7 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('contracts.all') }}">My Contracts</a>
-                                <a class="dropdown-item">My Wallet</a>
+                                <a class="dropdown-item" href="{{ route('wallet.user') }}">My Wallet</a>
                                 <div class="dropdown-divider"></div>
                                 @if(Auth::user()->isAdmin)
                                     <a class="dropdown-item" href="{{ route('discounts.all') }}">Discounts</a>

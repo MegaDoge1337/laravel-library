@@ -11,12 +11,6 @@ use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
-    protected DiscountService $discountService;
-
-    public function __construct(DiscountService $discountService)
-    {
-        $this->discountService = $discountService;
-    }
 
     public function login(Request $request)
     {
@@ -42,8 +36,6 @@ class LoginController extends Controller
         }
 
         $token = $user->createToken('Auth Token')->accessToken;
-
-        $this->discountService->giveDiscountForCreateDate($user);
 
         return response()
             ->json(['message' => 'Successfully login'])

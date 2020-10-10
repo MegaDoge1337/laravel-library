@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\GiftDiscount;
 use App\Providers\RouteServiceProvider;
-use App\Services\PaymentCalculator;
+use App\Services\DiscountService;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
@@ -33,17 +34,13 @@ class RegisterController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
-    protected PaymentCalculator $discountService;
-
     /**
      * Create a new controller instance.
      *
-     * @param PaymentCalculator $discountService
      */
-    public function __construct(PaymentCalculator $discountService)
+    public function __construct()
     {
         $this->middleware('guest');
-        $this->discountService = $discountService;
     }
 
     /**
@@ -78,9 +75,9 @@ class RegisterController extends Controller
 
     public function registered(Request $request, $user)
     {
-        $token = $user->createToken('Auth Token')->accessToken;
+        GiftDiscount::create(['user_id' => $user->id]);
 
-        $this->discountService->giveDiscountForCreateDate($user);
+        $token = $user->createToken('Auth Token')->accessToken;
 
         return redirect('/home')->cookie('token', $token, 60);
     }
